@@ -5,28 +5,27 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    LikeID: [],
+    favourites: [],
   },
   mutations: {
     ADD_LIKE(state, id) {
-      state.LikeID = id;
+      state.favourites.push(id);
     },
     REMOVE_LIKE(state, id) {
-      state.LikeID = id;
+      let index = state.favourites.findIndex((fav) => fav === id);
+      state.favourites.splice(index, 1);
     },
   },
   actions: {
-    ADD_LIKE({ commit }, id) {
-      commit('REMOVE_LIKE', id);
-      if (id > 0) {
-        commit('ADD_LIKE', id);
+    TOGGLE_LIKE({ commit }, payload) {
+      if (payload.flag) {
+        commit('ADD_LIKE', payload.id);
+      } else {
+        commit('REMOVE_LIKE', payload.id);
       }
-    },
-    REMOVE_LIKE({ commit }, id) {
-      commit('REMOVE_LIKE', id);
     },
   },
   getters: {
-    LikeID: (state) => state.LikeID,
+    favourites: (state) => state.favourites,
   },
 });

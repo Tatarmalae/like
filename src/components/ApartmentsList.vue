@@ -5,16 +5,16 @@
 </template>
 
 <script>
-import ApartmentsCard from "@/components/ApartmentsCard";
+import ApartmentsCard from '@/components/ApartmentsCard';
 
 export default {
-  name: "ApartmentsList",
+  name: 'ApartmentsList',
   components: {
-    ApartmentsCard
+    ApartmentsCard,
   },
   data() {
     return {
-      apartments: []
+      apartments: [],
     };
   },
   created() {
@@ -22,13 +22,13 @@ export default {
   },
   methods: {
     getApartments() {
-      fetch("./entities.json")
-        .then(res => res.json())
-        .then(json => {
+      fetch('./entities.json')
+        .then((res) => res.json())
+        .then((json) => {
           this.apartments = json.response;
         });
-    }
-  }
+    },
+  },
 };
 </script>
 

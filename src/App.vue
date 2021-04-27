@@ -5,29 +5,35 @@
 </template>
 
 <script>
-import ApartmentsList from "@/components/ApartmentsList";
+import ApartmentsList from '@/components/ApartmentsList';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
-    ApartmentsList
-  }
+    ApartmentsList,
+  },
 };
 </script>
 
 <style>
-html, body {
+html,
+body {
   font-family: Verdana, sans-serif;
   font-size: 15px;
   line-height: 1.5;
 }
 
-html, body, ol, ul {
+html,
+body,
+ol,
+ul,
+p {
   margin: 0;
   padding: 0;
 }
 
-ol, ul {
+ol,
+ul {
   list-style: none;
 }
 
